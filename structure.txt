@@ -1,0 +1,61 @@
+Route Structure
+
+import express from 'express';
+const app = express()
+
+app.get('/', (req, res) => {
+    res.send('Hello World!', {message : "Hello All"})
+    // res.json({message : "Hello All"})
+})
+
+//CRUD Operations
+// Read 
+app.get('/services', ()=>{
+
+})
+// Create
+app.post('/services', ()=>{
+
+})
+// Update
+app.put('/services/:id', ()=>{
+
+})
+// Delete
+app.delete('/services/:id', ()=>{
+    
+})
+
+app.listen(3000, ()=>{
+    console.log('Server is running on http://localhost:3000')
+})
+
+
+-------------------------------------------------------
+
+
+router
+middleware  -->  connects with router
+
+postman  -->  for testing API
+
+
+--------------------------------------------------------
+
+
+## db.js file
+
+import mongoose from "mongoose"
+
+const connect = async() => {
+    try{
+        await mongoose.connect('mongodb+srv://cybersocapi:WZ8VDOHamPd7sYnN@cyber-api.hxeeb3b.mongodb.net/?retryWrites=true&w=majority&appName=cyber-api')
+        // Save it in .env file
+        
+    }catch(err){
+        console.error("Error connecting to MongoDB:", err);
+        console.error(err.message);
+        process.exit(1); // Exit the process with failure           
+    }
+}
+export default connect;
