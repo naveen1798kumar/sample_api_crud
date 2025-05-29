@@ -19,18 +19,3 @@
 
 SQL     ->  MySql
 NOSql   ->  Mongo DB
-
-## password
-    WZ8VDOHamPd7sYnN
-
-
-mongodb+srv://cybersocapi:WZ8VDOHamPd7sYnN@cyber-api.hxeeb3b.mongodb.net/?retryWrites=true&w=majority&appName=cyber-api
-
-<!-- MVC -->
-router
-controller
-
-middleware  -->  connects with router
-
-
-
