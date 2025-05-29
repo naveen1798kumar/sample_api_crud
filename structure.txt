@@ -59,3 +59,54 @@ const connect = async() => {
     }
 }
 export default connect;
+
+
+-------------------------------------------------------------
+
+
+## Add Model
+
+import { model, Schema } from "mongoose";
+
+// write the Schema
+const serviceSchema = new Schema({
+    title: String,
+    desc: String,
+})
+
+// create your model
+const serviceModel = model('Service', serviceSchema)
+
+export default serviceModel;
+
+{
+    title: {
+    type : String,
+    required: true,
+    unique: true,
+        },
+}
+also add validation
+
+
+===============
+
+
+in the controller
+
+
+ const newService = new serviceModel({
+        title: req.body.title,
+        desc: req.body.desc
+    })
+
+    try {
+        const service = await newService.save()
+        return res.status(201).json(service)
+    } catch (error) {
+        return res.status(400).json({
+            message: "Error creating service",
+            error: error.message
+        })
+    }
+   
